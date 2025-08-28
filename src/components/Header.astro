@@ -1,0 +1,155 @@
+---
+import { PERSONAL_INFO } from '../consts';
+---
+
+<header class="header">
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="#home" class="brand-link">{PERSONAL_INFO.name}</a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#about" class="nav-link">Sobre mí</a></li>
+      <li><a href="#experience" class="nav-link">Experiencia</a></li>
+      <li><a href="#projects" class="nav-link">Proyectos</a></li>
+      <li><a href="#education" class="nav-link">Educación</a></li>
+      <li><a href="#contact" class="nav-link">Contacto</a></li>
+    </ul>
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(15, 15, 35, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .brand-link:hover {
+    color: #93c5fd;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #60a5fa;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #60a5fa;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #cbd5e1;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Smooth scrolling for navigation links
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.substring(1);
+        const targetElement = document.getElementById(targetId || '');
+        
+        if (targetElement) {
+          const headerHeight = 80;
+          const targetPosition = targetElement.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
+    });
+  });
+</script>

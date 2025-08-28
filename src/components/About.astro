@@ -1,0 +1,237 @@
+---
+import { SKILLS } from '../consts';
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Sobre mí</h2>
+      <p class="section-subtitle">Conoce más sobre mi experiencia y habilidades</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <p class="about-description">
+          Soy un ingeniero de software con más de 4 años de experiencia desarrollando 
+          aplicaciones web escalables y soluciones tecnológicas innovadoras. Mi pasión 
+          por la tecnología me impulsa a mantenerme actualizado con las últimas tendencias 
+          y mejores prácticas del desarrollo de software.
+        </p>
+        <p class="about-description">
+          Me especializo en el desarrollo full-stack, con un enfoque particular en 
+          tecnologías modernas como React, Node.js y arquitecturas en la nube. 
+          Disfruto trabajando en equipos colaborativos y resolviendo problemas complejos 
+          con soluciones elegantes y eficientes.
+        </p>
+        
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Proyectos Completados</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Tecnologías Dominadas</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-section">
+        <h3 class="skills-title">Habilidades Técnicas</h3>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4 class="category-title">Frontend</h4>
+            <div class="skills-list">
+              {SKILLS.frontend.map(skill => (
+                <span class="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4 class="category-title">Backend</h4>
+            <div class="skills-list">
+              {SKILLS.backend.map(skill => (
+                <span class="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4 class="category-title">Bases de Datos</h4>
+            <div class="skills-list">
+              {SKILLS.databases.map(skill => (
+                <span class="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4 class="category-title">Herramientas</h4>
+            <div class="skills-list">
+              {SKILLS.tools.map(skill => (
+                <span class="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-description {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(148, 163, 184, 0.05);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .skills-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 2rem 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .skill-category {
+    background: rgba(148, 163, 184, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #60a5fa;
+    margin: 0 0 1rem 0;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    background: rgba(96, 165, 250, 0.1);
+    color: #93c5fd;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: rgba(96, 165, 250, 0.2);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .about {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .stats {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .stat {
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+</style>

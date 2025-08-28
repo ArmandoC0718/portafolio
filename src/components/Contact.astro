@@ -1,0 +1,350 @@
+---
+import { PERSONAL_INFO } from '../consts';
+---
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3 class="contact-info-title">Información de Contacto</h3>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Email</span>
+              <a href={`mailto:${PERSONAL_INFO.email}`} class="contact-value">{PERSONAL_INFO.email}</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Teléfono</span>
+              <a href={`tel:${PERSONAL_INFO.phone}`} class="contact-value">{PERSONAL_INFO.phone}</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Ubicación</span>
+              <span class="contact-value">{PERSONAL_INFO.location}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href={PERSONAL_INFO.github} target="_blank" rel="noopener" class="social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-form-section">
+        <h3 class="contact-form-title">Envíame un mensaje</h3>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject" class="form-label">Asunto</label>
+            <input type="text" id="subject" name="subject" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+            </svg>
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-info-title,
+  .contact-form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 2rem 0;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(148, 163, 184, 0.05);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover {
+    background: rgba(148, 163, 184, 0.08);
+    transform: translateX(4px);
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+
+  .contact-value {
+    color: #e2e8f0;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .contact-value:hover {
+    color: #60a5fa;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(96, 165, 250, 0.1);
+    color: #60a5fa;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+  }
+
+  .social-link:hover {
+    background: rgba(96, 165, 250, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .form-input {
+    padding: 0.875rem 1rem;
+    background: rgba(148, 163, 184, 0.05);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 0.5rem;
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    background: rgba(148, 163, 184, 0.08);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+  }
+
+  .form-input::placeholder {
+    color: #64748b;
+  }
+
+  textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .social-links {
+      flex-direction: column;
+    }
+
+    .social-link {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact-form') as HTMLFormElement;
+    
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(form);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      // Create mailto link
+      const mailtoLink = `mailto:${import.meta.env.PERSONAL_EMAIL || 'tu.email@ejemplo.com'}?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`)}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Reset form
+      form.reset();
+      
+      // Show success message (you could replace this with a toast notification)
+      alert('¡Gracias por tu mensaje! Se abrirá tu cliente de email.');
+    });
+  });
+</script>

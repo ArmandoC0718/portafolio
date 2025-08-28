@@ -1,0 +1,281 @@
+---
+import { EDUCATION, CERTIFICATIONS } from '../consts';
+---
+
+<section id="education" class="education">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Educación y Certificaciones</h2>
+      <p class="section-subtitle">Mi formación académica y certificaciones profesionales</p>
+    </div>
+    
+    <div class="education-content">
+      <div class="education-section">
+        <h3 class="subsection-title">Educación</h3>
+        <div class="education-grid">
+          {EDUCATION.map(edu => (
+            <div class="education-card">
+              <div class="education-header">
+                <h4 class="degree-title">{edu.degree}</h4>
+                <span class="education-period">{edu.period}</span>
+              </div>
+              <div class="institution-info">
+                <span class="institution-name">{edu.institution}</span>
+                <span class="education-location">{edu.location}</span>
+              </div>
+              {edu.gpa && (
+                <div class="academic-details">
+                  <span class="gpa">GPA: {edu.gpa}</span>
+                  {edu.honors && <span class="honors">{edu.honors}</span>}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div class="certifications-section">
+        <h3 class="subsection-title">Certificaciones</h3>
+        <div class="certifications-grid">
+          {CERTIFICATIONS.map(cert => (
+            <div class="certification-card">
+              <div class="cert-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                </svg>
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-name">{cert.name}</h4>
+                <p class="cert-issuer">{cert.issuer}</p>
+                <div class="cert-details">
+                  <span class="cert-date">{cert.date}</span>
+                  <span class="cert-id">ID: {cert.credentialId}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .education {
+    padding: 6rem 2rem;
+    background: #0f172a;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .education-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .subsection-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 2rem 0;
+    text-align: center;
+  }
+
+  .education-grid,
+  .certifications-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .education-card,
+  .certification-card {
+    background: rgba(148, 163, 184, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .education-card:hover,
+  .certification-card:hover {
+    background: rgba(148, 163, 184, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .degree-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0;
+  }
+
+  .education-period {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .institution-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .institution-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #60a5fa;
+  }
+
+  .education-location {
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+
+  .academic-details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .gpa {
+    color: #10b981;
+    font-weight: 500;
+  }
+
+  .honors {
+    color: #fbbf24;
+    font-weight: 500;
+  }
+
+  .certification-card {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .cert-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .cert-content {
+    flex: 1;
+  }
+
+  .cert-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .cert-issuer {
+    color: #60a5fa;
+    font-weight: 500;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .cert-details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cert-date {
+    color: #10b981;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .cert-id {
+    color: #94a3b8;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .education {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .education-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .education-header {
+      flex-direction: column;
+      align-items: start;
+      gap: 0.5rem;
+    }
+
+    .institution-info {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .certification-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cert-icon {
+      align-self: center;
+    }
+  }
+</style>

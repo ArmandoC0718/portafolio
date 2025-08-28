@@ -1,0 +1,229 @@
+---
+import { EXPERIENCE } from '../consts';
+---
+
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Experiencia Laboral</h2>
+      <p class="section-subtitle">Mi trayectoria profesional en el desarrollo de software</p>
+    </div>
+    
+    <div class="timeline">
+      {EXPERIENCE.map((job, index) => (
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            {index < EXPERIENCE.length - 1 && <div class="marker-line"></div>}
+          </div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <h3 class="job-title">{job.position}</h3>
+              <span class="job-period">{job.period}</span>
+            </div>
+            <div class="job-company">
+              <span class="company-name">{job.company}</span>
+              <span class="job-location">{job.location}</span>
+            </div>
+            <p class="job-description">{job.description}</p>
+            <ul class="achievements-list">
+              {job.achievements.map(achievement => (
+                <li class="achievement-item">{achievement}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding: 6rem 2rem;
+    background: #0f172a;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .timeline-marker {
+    position: relative;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marker-dot {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    border: 4px solid #1e293b;
+    z-index: 2;
+    position: relative;
+  }
+
+  .marker-line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 100%);
+    position: absolute;
+    top: 20px;
+    opacity: 0.3;
+  }
+
+  .timeline-content {
+    flex: 1;
+    background: rgba(148, 163, 184, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    background: rgba(148, 163, 184, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .job-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0;
+  }
+
+  .job-period {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .job-company {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #60a5fa;
+  }
+
+  .job-location {
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+
+  .job-description {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .achievement-item {
+    color: #cbd5e1;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .achievement-item::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .experience {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .timeline-marker {
+      margin-right: 1rem;
+    }
+
+    .timeline-content {
+      padding: 1.5rem;
+    }
+
+    .job-header {
+      flex-direction: column;
+      align-items: start;
+      gap: 0.5rem;
+    }
+
+    .job-company {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+</style>
